@@ -43,13 +43,13 @@ if choice == "Dúvidas":
     st.header("Relatório de DÚVIDAS")   
     st.write('EQUIPE 03:')
     st.info('Dúvida(s) Enviada(s)')
-    st.code(df01D['duvida']) 
+    st.code(df03D['duvida']) 
            
 elif choice == "Respostas":       
     st.header("Relatório de RESPOSTAS")    
     st.write('EQUIPE 03:')    
     st.warning('Resposta do(a) TUTOR(A):')
-    st.code(df01R['resposta'])  
+    st.code(df03R['resposta'])  
 
                
 elif choice == "Dúvidas e Respostas":       

@@ -13,8 +13,8 @@ dataD = rD.content
 dfD = pd.read_csv(BytesIO(dataD), index_col=0)
 NregD = len(dfD)
 dfD.columns = ['email', 'equipe', 'nome', 'duvida', 'obs']
-selecao01D = dfD['equipe']=='Equipe 01'
-df01D = dfD[selecao01D]
+selecao03D = dfD['equipe']=='Equipe 03'
+df03D = dfD[selecao03D]
 
 #RESPOSTAS
 rR = requests.get('https://docs.google.com/spreadsheets/d/e/2PACX-1vQw6XD9vI_C4zvZ6W51vut_Ze_D_OSESuXiHh1IAXeBFXRRvyQ7kyFTLbGip1obadjbZHUmaAxvXmnz/pub?gid=1789345467&single=true&output=csv')

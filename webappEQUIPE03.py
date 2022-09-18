@@ -22,17 +22,17 @@ dataR = rR.content
 dfR = pd.read_csv(BytesIO(dataR), index_col=0)
 NregR = len(dfR)
 dfR.columns = ['email', 'equipe', 'nome', 'resposta', 'sugestao']
-selecao01R = dfR['equipe']=='Equipe 01'
-df01R = dfR[selecao01R]
+selecao03R = dfR['equipe']=='Equipe 03'
+df03R = dfR[selecao03R]
 
 #Cálculo do Número de Registros por EQUIPE
-NregDf01D = len(df01D)
-NregDf01R = len(df01R)
+NregDf03D = len(df03D)
+NregDf03R = len(df03R)
 
 
 image01 = Image.open('ImagemLateral.jpg')
 st.sidebar.image(image01, width=300, caption='Mack Week CCT 2022') 
-st.title("PAINEL - EQUIPE 01")
+st.title("PAINEL - EQUIPE 03")
 menu = ["Dúvidas",
         "Respostas",
         "Dúvidas e Respostas"]
@@ -41,13 +41,13 @@ st.sidebar.info("By: Prof. Massaki de O. Igarashi")
 
 if choice == "Dúvidas": 
     st.header("Relatório de DÚVIDAS")   
-    st.write('EQUIPE 01:')
+    st.write('EQUIPE 03:')
     st.info('Dúvida(s) Enviada(s)')
     st.code(df01D['duvida']) 
            
 elif choice == "Respostas":       
     st.header("Relatório de RESPOSTAS")    
-    st.write('EQUIPE 01:')    
+    st.write('EQUIPE 03:')    
     st.warning('Resposta do(a) TUTOR(A):')
     st.code(df01R['resposta'])  
 
@@ -57,12 +57,12 @@ elif choice == "Dúvidas e Respostas":
     colDR1, colDR2 = st.columns((1,1))
     with colDR1:
         st.write("Nº TOTAL de Dúvidas (DESTA EQUIPE):")
-        st.warning(NregDf01D)
+        st.warning(NregDf03D)
     with colDR2:
         st.write("Nº TOTAL de dúvidas RESPONDIDAS:")
-        st.info(NregDf01R)
-    st.subheader('EQUIPE 01:')
+        st.info(NregDf03R)
+    st.subheader('EQUIPE 03:')
     st.info('Dúvida(s) Enviada(s)')
-    st.code(df01D['duvida']) 
+    st.code(df03D['duvida']) 
     st.warning('Resposta do(a) TUTOR(A):')
-    st.code(df01R['resposta'])  
+    st.code(df03R['resposta'])  
